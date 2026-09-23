@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-
-namespace GenConfig;
+﻿namespace GenConfig;
 
 public static class TemplateProcessor
 {
-    public static string Apply(string template, Dictionary<string, string> values)
+    public static string Apply(string template, Dictionary<string, string?> values)
     {
         var output = template;
 

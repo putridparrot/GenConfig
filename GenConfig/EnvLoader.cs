@@ -4,9 +4,9 @@ namespace GenConfig;
 
 public static class EnvLoader
 {
-    public static Dictionary<string, string> Load(string envFile)
+    public static Dictionary<string, string?> Load(string envFile)
     {
-        var dict = new Dictionary<string, string>();
+        var dict = new Dictionary<string, string?>();
 
         foreach (var line in File.ReadAllLines(envFile))
         {

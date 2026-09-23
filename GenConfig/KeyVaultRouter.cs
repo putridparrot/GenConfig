@@ -10,8 +10,11 @@ public class KeyVaultRouter
             _vaults[v] = new KeyVaultClient(v);
     }
 
-    public string Resolve(string vaultAndSecret)
+    public string Resolve(string? vaultAndSecret)
     {
+        if (vaultAndSecret == null)
+            throw new ArgumentNullException(nameof(vaultAndSecret));
+
         var parts = vaultAndSecret.Split(':');
         var vault = parts[0];
         var secret = parts[1];

@@ -8,7 +8,7 @@ public static class TokenValidator
         return matches.Select(m => m.Groups[1].Value).Distinct().ToList();
     }
 
-    public static List<string> FindMissingTokens(List<string> tokens, Dictionary<string, string> values)
+    public static List<string> FindMissingTokens(List<string> tokens, Dictionary<string, string?> values)
     {
         return tokens.Where(t => !values.ContainsKey(t)).ToList();
     }
